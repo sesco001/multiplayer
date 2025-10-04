@@ -16,8 +16,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
+      padding: 1rem;
     }
 
     h1 {
@@ -36,7 +37,7 @@
       background: #111;
       border-radius: 16px;
       padding: 2rem 1.5rem;
-      width: 150px;
+      width: 180px;
       cursor: pointer;
       transition: transform 0.2s, background 0.2s;
       display: flex;
@@ -61,13 +62,23 @@
       color: #fff;
     }
 
+    .icon-card p {
+      font-size: 0.8rem;
+      color: #ccc;
+      margin: 0.3rem 0 0;
+      text-align: center;
+    }
+
     @media (max-width: 500px) {
       .icon-card {
-        width: 120px;
+        width: 140px;
         padding: 1.5rem 1rem;
       }
       .icon-card i {
         font-size: 36px;
+      }
+      .icon-card p {
+        font-size: 0.75rem;
       }
     }
   </style>
@@ -80,24 +91,33 @@
     <div class="icon-card" onclick="redirectTo('https://makamesco-apk-downloader-1.onrender.com/')">
       <i class="material-icons">android</i>
       <span>APK</span>
+      <p>Download the latest Android apps and games safely.</p>
     </div>
 
     <div class="icon-card" onclick="redirectTo('https://makamesco-downloader-web.onrender.com/')">
       <i class="material-icons">music_note</i>
       <span>Music</span>
+      <p>Search and download MP3s from YouTube with play options.</p>
     </div>
 
     <div class="icon-card" onclick="redirectTo('https://xvideo-downloader.onrender.com/')">
       <i class="material-icons">videocam</i>
       <span>X Videos</span>
+      <p>Adult content 18+ only. Download or stream videos safely.</p>
     </div>
   </div>
 
   <script>
     function redirectTo(url) {
+      const card = event.currentTarget;
+      if (card.querySelector('span').textContent === 'X Videos') {
+        const confirmAdult = confirm("⚠️ Warning: Only for 18 years and above. Proceed?");
+        if (!confirmAdult) return;
+      }
       window.location.href = url;
     }
   </script>
 
 </body>
 </html>
+
