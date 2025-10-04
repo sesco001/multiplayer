@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Makamesco Tech Downloader</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00d9ff;
+      margin-bottom: 2rem;
+    }
+
+    .icon-grid {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .icon-card {
+      background: #111;
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-5px);
+      background: #222;
+    }
+
+    .icon-card i {
+      font-size: 48px;
+      color: #00d9ff;
+    }
+
+    .icon-card span {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    @media (max-width: 500px) {
+      .icon-card {
+        width: 120px;
+        padding: 1.5rem 1rem;
+      }
+      .icon-card i {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Makamesco Tech Downloader</h1>
+
+  <div class="icon-grid">
+    <div class="icon-card" onclick="redirectTo('https://makamesco-apk-downloader-1.onrender.com/')">
+      <i class="material-icons">android</i>
+      <span>APK</span>
+    </div>
+
+    <div class="icon-card" onclick="redirectTo('https://makamesco-downloader-web.onrender.com/')">
+      <i class="material-icons">music_note</i>
+      <span>Music</span>
+    </div>
+
+    <div class="icon-card" onclick="redirectTo('https://xvideo-downloader.onrender.com/')">
+      <i class="material-icons">videocam</i>
+      <span>X Videos</span>
+    </div>
+  </div>
+
+  <script>
+    function redirectTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
